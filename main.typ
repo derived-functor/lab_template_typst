@@ -2,7 +2,17 @@
   first-line-indent: 1.5mm,
   justify: true,
 )
-#set page("a4", numbering: "1", number-align: center)
+#set page(
+  "a4",
+  numbering: "1",
+  number-align: center,
+  footer: context {
+    let page-num = counter(page).get().first()
+    if page-num > 1 {
+      align(center, counter(page).display("1"))
+    }
+  }
+)
 #set text(font: "Times New Roman", 14pt)
 
 #show heading: set align(center)
