@@ -1,7 +1,9 @@
 #set par(
-  first-line-indent: 1.5mm,
+  first-line-indent: 1.25cm,
   justify: true,
+  leading: 0.65em,
 )
+
 #set page(
   "a4",
   numbering: "1",
@@ -13,10 +15,14 @@
     }
   }
 )
-#set text(font: "Times New Roman", 14pt)
+#set text(font: "Times New Roman", lang: "ru", 14pt)
 
 #show heading: set align(center)
 #show figure.where(kind: image): set figure(supplement: [Рис.])
+#show heading: it => {
+  it
+  par(first-line-indent: 1.25cm)[#text()[]]
+}
 
 #include "pages/title_page.typ"
 
